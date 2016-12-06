@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+function invoiceTotal() {
+  var amount = 0;
+  var index = 0;
+
+  for (index = 0; index < arguments.length; ++index) {
+    amount += arguments[index];
+  }
+
+  return amount;
+}
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+log(invoiceTotal(20, 30, 40, 50),         140);
+log(invoiceTotal(20, 30, 40, 50, 40, 40), 220);
+theEnd();
+
+    </script>
+  </body>
+</html>

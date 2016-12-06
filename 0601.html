@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+var x;
+log((false && x), false);
+log((false || x), x);
+log(((false && x) || (false || x)), x);
+log(((false || x) || (false && x)), false);
+log(((false && x) && (false || x)), false);
+log(((false || x) && (false && x)), x);
+log(('a' || (false && x) || ''), 'a');
+log(((false && x) || 'a' || ''), 'a');
+log(('a' && (false || x) && ''), x);
+log(((false || x) && 'a' && ''), x);
+theEnd();
+
+    </script>
+  </body>
+</html>

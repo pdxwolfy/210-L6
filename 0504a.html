@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+var myObj = {};
+// { }
+myObj[myFunc()] = 'hello, ';
+// { funcProp: 'hello, ' }
+function myFunc() {
+  return 'funcProp';
+};
+
+console.log(myObj);
+// { funcProp: 'hello, ' }
+myObj[myFunc()] = 'world!';
+// { funcProp: 'world!' }
+console.log(myObj);
+// { funcProp: 'world!' }
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+    </script>
+  </body>
+</html>

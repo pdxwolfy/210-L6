@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+var MILLISECOND_PER_MINUTE = 60 * 1000;
+var MIDNIGHT = new Date('Jan 1 2016 00:00');
+
+function timeOfDay(deltaMinutes) {
+  var newTime = MIDNIGHT.getTime() + (deltaMinutes * MILLISECOND_PER_MINUTE);
+
+  newTime = new Date(newTime);
+  return newTime.toTimeString().substr(0, 5);
+}
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+log(timeOfDay(0),     '00:00');
+log(timeOfDay(-3),    '23:57');
+log(timeOfDay(35),    '00:35');
+log(timeOfDay(-1437), '00:03');
+log(timeOfDay(3000),  '02:00');
+log(timeOfDay(800),   '13:20');
+log(timeOfDay(-4231), '01:29');
+theEnd();
+
+    </script>
+  </body>
+</html>

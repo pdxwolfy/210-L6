@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+var array1 = ['Moe', 'Larry', 'Curly', 'Chemp', 'Harpo', 'Chico', 'Groucho', 'Zeppo'];
+var array2 = [];
+
+for (var i = 0; i < array1.length; i++) {
+  array2.push(array1[i]);
+}
+
+for (var i = 0; i < array1.length; i++) {
+  if (array1[i].startsWith('C')) {
+    array1[i] = array1[i].toUpperCase();
+  }
+}
+
+console.log(array2);
+
+/*
+ * Logs ['Moe', 'Larry', 'Curly', 'Chemp', 'Harpo', 'Chico', 'Groucho', 'Zeppo']
+ *
+ * array2 contains refernces to all of the objects that were originally in
+ * array1. After array2 is created, we next convert all elements in array1 that
+ * begin with 'C' to uppercase. Since Strings are immutable, we need don't
+ * actually change the original Strings, but create new Strings that we
+ * subsequently store in array1. This does not change the references in array2,
+ * however.
+ */
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+    </script>
+  </body>
+</html>

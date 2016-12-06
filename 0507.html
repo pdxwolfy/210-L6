@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+function calculateBonus() {
+  return arguments[1] ? arguments[0] / 2 : 0;
+}
+
+log(calculateBonus(2800, true), 1400);
+log(calculateBonus(1000, false), 0);
+log(calculateBonus(50000, true), 25000);
+
+theEnd();
+
+    </script>
+  </body>
+</html>

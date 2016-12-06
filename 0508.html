@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+function penultimate(string) {
+  var words = string.split(' ');
+  return words[words.length - 2];
+}
+
+show(penultimate('last word'));               // 'last'
+show(penultimate('Launch School is great!')); // 'is'
+theEnd();
+
+    </script>
+  </body>
+</html>

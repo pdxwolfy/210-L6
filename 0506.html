@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+var myArray = [5, 5];
+myArray[-1] = 5;
+myArray[-2] = 5;
+function average(array) {
+  var sum = 0;
+  for (var i = -2; i < array.length; i++) {
+    sum += array[i];
+  }
+
+  return sum / array.length;
+}
+
+average(myArray); // 10
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+    </script>
+  </body>
+</html>

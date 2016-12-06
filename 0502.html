@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+var xname = {
+  first: function() {
+    return 'Victor';
+  },
+  last: function() {
+    return 'Reyes';
+  },
+  xyzzy: function() {
+    return 'Hello';
+  },
+};
+
+console.log(xname.first + ' ' + xname.last);
+/*
+ * name.first and name.last are both Function objects, not Function calls, so
+ * the Function objects will be converted to Strings, and concatenated with ' '
+ */
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+    </script>
+  </body>
+</html>

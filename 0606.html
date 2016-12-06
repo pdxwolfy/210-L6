@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+function debugIt() {
+  var status = 'debugging';
+  function logger() {
+    console.log(status);
+  }
+
+  logger();
+}
+
+debugIt();
+
+/*
+ * Because the logger() function is a closure, it can access the value of
+ * the `status` variable.
+ */
+
+    </script>
+  </body>
+</html>

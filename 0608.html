@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+function productOfSums(array1, array2) {
+  var result;
+  result = total(array1) * total(array2);
+  return result;
+}
+
+function total(numbers) {
+  var sum = 0;
+  for (var i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+
+  return sum;
+}
+
+/*
+ * It doesn't work because total returns undefined, so productOfSums() returns
+ * NaN. Also, sum isn't initialized.
+ */
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+log(productOfSums([], []), 0);
+log(productOfSums([5], [3]), 15);
+log(productOfSums([5, 8], [2, 3]), 65);
+log(productOfSums([1, 2, 3], [4, 5]), 54);
+theEnd();
+
+    </script>
+  </body>
+</html>

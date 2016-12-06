@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+var myObject = {
+  a: 'name',
+  'b': 'test',
+  123: 'c',
+  1: 'd'
+};
+myObject[1];
+myObject[a]; // a is undefined here, so this line fails
+myObject.a;
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+    </script>
+  </body>
+</html>

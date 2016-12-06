@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+function padLeft(num) {
+  return num.toString().length <= 1 ? ' ' + num : num;
+}
+
+var row;
+
+for (var i = 1; i < 10; i++) {
+  row = '';
+  for (var j = 1; j <= 10; j++) {
+    row += padLeft(i * j) + ' ';
+  }
+  console.log(row + '\n');
+}
+
+/*
+ * Mostly works, but doesn't handle row 10.
+ */
+
+    </script>
+  </body>
+</html>

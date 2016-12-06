@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+var MINUTES_PER_HOUR = 60;
+var HOURS_PER_DAY = 24;
+var MINUTES_PER_DAY = HOURS_PER_DAY * MINUTES_PER_HOUR;
+var MILLISECONDS_PER_MINUTE = 60 * 1000;
+var MIDNIGHT = new Date('Jan 1 2016 00:00');
+
+function afterMidnight(timeStr) {
+  var date = new Date('Jan 1 2016 ' + timeStr);
+  return (date - MIDNIGHT) / MILLISECONDS_PER_MINUTE;
+}
+
+function beforeMidnight(timeStr) {
+  var after = afterMidnight(timeStr);
+  return (after === 0) ? after : (MINUTES_PER_DAY - after);
+}
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+log(afterMidnight('00:00'),  0);
+log(beforeMidnight('00:00'), 0);
+log(afterMidnight('12:34'),  754);
+log(beforeMidnight('12:34'), 686);
+theEnd();
+
+    </script>
+  </body>
+</html>
