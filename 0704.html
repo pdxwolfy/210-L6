@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+function makeDoubler(caller) {
+  return function doubler(number) {
+    console.log('This function was called by ' + caller + '.');
+    return number + number;
+  };
+}
+
+var doubler = makeDoubler('Victor');
+show(doubler(5));
+var pete = makeDoubler('Pete');
+show(pete(4));
+show(doubler(3));
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+theEnd();
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+var arr = ['Apples', 'Peaches', 'Grapes'];
+
+arr[3.4] = 'Oranges';
+log(arr.length, 3);
+log(Object.keys(arr).length, 4);
+
+arr[-2] = 'Watermelon';
+log(arr.length, 3);
+log(Object.keys(arr).length, 5);
+
+theEnd();
+
+    </script>
+  </body>
+</html>

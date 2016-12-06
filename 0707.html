@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+function one() {
+  function log(result) {
+    console.log(result);
+  }
+
+  function anotherOne() { var result = '';
+    for (var i = 0; i < arguments.length; i++) {
+      result += String.fromCharCode(arguments[i]);
+    }
+
+    log(result);
+  }
+
+  function anotherAnotherOne() {
+    // 'Welcome '
+    console.log(String.fromCharCode(87, 101, 108, 99, 111, 109, 101, 32));
+    anotherOne(116, 111, 32) // 'to '
+  }
+
+  anotherAnotherOne();
+  anotherOne(116, 104, 101, 32); // 'the '
+  return anotherOne;
+}
+
+one()(77, 97, 116, 114, 105, 120, 33); // 'Matrix!'
+theEnd();
+
+/*
+ * one()
+ *   anotherAnotherOne()
+ *     -> 'Welcome '
+ *     anotherOne('t', 'o', ' ')
+ *       -> 'to '
+ *     anotherOne('t', 'h', 'e', ' ')
+ *       -> 'the '
+ *     -> 'Martix!'
+ */
+    </script>
+  </body>
+</html>

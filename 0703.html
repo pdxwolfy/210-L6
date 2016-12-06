@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+var startingBalance = 1;
+var chicken = 5;
+var chickenQuantity = 7;
+
+var totalPayable = function(item, quantity) {
+  return startingBalance + (item * quantity);
+}
+
+startingBalance = 5; // Alters varaible startingBalance
+                     // totalPayable sees this change
+console.log(totalPayable(chicken, chickenQuantity)); // logs 40
+
+startingBalance = 10; // totalPayable sees this change too
+console.log(totalPayable(chicken, chickenQuantity)); // logs 45
+
+/*
+ * They aren't the same object. When used with objects, both objects must be the
+ * same object.
+ */
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+theEnd();
+
+    </script>
+  </body>
+</html>

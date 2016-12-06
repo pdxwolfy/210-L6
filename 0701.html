@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+function processOrder(price, quantity, discount, serviceCharge, tax) {
+  quantity = quantity || 1;
+  discount = discount || 0;
+  serviceCharge = serviceCharge || 0.1;
+  tax = tax || 0.15;
+  return (price * quantity) * (1 - discount) * (1 + serviceCharge) * (1 + tax);
+}
+
+/*
+ * It doesn't work because total returns undefined, so productOfSums() returns
+ * NaN. Also, sum isn't initialized.
+ */
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+log(processOrder(100), 126.5);
+log(processOrder(100, 0, 0, 0, 0), 126.5);
+log(processOrder(100, 10), 1265);
+log(processOrder(100, 10, 0.25), 948.75);
+log(processOrder(100, 10, 0.25, 0.50), 1293.75);
+log(processOrder(100, 10, 0.25, 0.50, 0.08), 1215);
+theEnd();
+
+    </script>
+  </body>
+</html>
