@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+var a = 7;
+
+function myValue(b) {
+  b += 10;
+}
+
+myValue(a);
+console.log(a);
+
+// prints 7
+//
+// Numbers are immutable, so myValue cannot modify the argument `a`. Inside
+// the Function, `b += 10` creates a new Number with the value 17 and assigns
+// it to the variable `b`. This does not, however, alter `a`
+    </script>
+  </body>
+</html>

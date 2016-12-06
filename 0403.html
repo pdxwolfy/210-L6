@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+function concat(array1, secondArgument) {
+  var result = array1.slice();
+  var index;
+
+  if (typeof secondArgument === 'object' && Array.isArray(secondArgument)) {
+    for (index = 0; index < secondArgument.length; ++index) {
+      result.push(secondArgument[index]);
+    }
+  } else {
+    result.push(secondArgument);
+  }
+
+  return result;
+}
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+log(concat([1, 2, 3], [4, 5, 6]), [1, 2, 3, 4, 5, 6]);
+log(concat([1, 2], 3), [1, 2, 3]);
+log(concat([2, 3], ['two', 'three']), [2, 3, 'two', 'three']);
+log(concat([2, 3], 'four'), [2, 3, 'four']);
+
+var obj = { a: 2, b: 3 };
+var newArray = concat([2, 3], obj);
+log(newArray, [2, 3, { a: 2, b: 3 }]);
+obj.a = 'two';
+log(newArray, [2, 3, { a: 'two', b: 3 }]);
+theEnd();
+
+    </script>
+  </body>
+</html>

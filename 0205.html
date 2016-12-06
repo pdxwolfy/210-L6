@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+var number1 = parseInt(prompt('Enter the first number:'), 10);
+var number2 = parseInt(prompt('Enter the second number:'), 10);
+if (isNaN(number1)) {
+  console.log('First number is not a number.');
+} else if (isNaN(number2)) {
+  console.log('Second number is not a number.');
+} else {
+  console.log(number1 + ' + ' + number2 + ' = ' + (number1 + number2));
+  console.log(number1 + ' - ' + number2 + ' = ' + (number1 - number2));
+  console.log(number1 + ' * ' + number2 + ' = ' + (number1 * number2));
+  console.log(number1 + ' / ' + number2 + ' = ' + Math.floor(number1 / number2));
+  console.log(number1 + ' % ' + number2 + ' = ' + (number1 % number2));
+  console.log(number1 + ' ** ' + number2 + ' = ' + Math.pow(number1, number2));
+}
+    </script>
+  </body>
+</html>

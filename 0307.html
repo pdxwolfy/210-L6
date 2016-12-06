@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+//
+var a = 7;
+
+function myValue(a) {
+  a += 10;
+}
+
+myValue(a);
+console.log(a);
+
+// prints 7
+//
+// The argument `a` shadows the top-level variable `a`. Furthermore, Numbers are
+// immutable so myValue cannot modify the value it was passed. Thus, at the time
+// console.log is called, `a` still has its original value.
+    </script>
+  </body>
+</html>

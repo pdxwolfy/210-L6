@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+function oddities(array) {
+  var oddElements = [];
+  for (var i = 0; i < array.length; i += 2) {
+    oddElements.push(array[i]);
+  }
+  return oddElements;
+}
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+
+oddities([2, 3, 4, 5, 6]) === [2, 4, 6]   // false
+oddities(['abc', 'def']) === ['def']      // false
+
+/*
+ * The result is always false since `===` with Arrays only checks whether the
+ * two objects are the same Array, not whether they have the same values.
+ */
+
+theEnd();
+
+    </script>
+  </body>
+</html>

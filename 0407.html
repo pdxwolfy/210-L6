@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+function unshift(array) {
+  var index;
+
+  for (index = 1; index < arguments.length; ++index) {
+    array.splice(index - 1, 0, arguments[index]);
+  }
+
+  return array.length;
+}
+
+function shift(array) {
+  var result;
+
+  if (array.length !== 0) {
+    result = array.splice(0, 1).pop();
+  }
+
+  return result;
+}
+
+/* eslint-disable no-magic-numbers */
+/* eslint-disable vars-on-top */
+/* global show, log, theEnd */
+var array = [1, 2, 3];
+log(shift(array), 1);
+log(array, [2, 3]);
+
+array = [];
+log(shift(array));
+log(array, []);
+
+
+array = [[1, 2, 3], 4, 5];
+log(shift(array), [1, 2, 3]);
+log(array, [4, 5]);
+
+array = [1, 2, 3];
+log(unshift(array, 5, 6), 5);
+log(array, [5, 6, 1, 2, 3]);
+
+array = [1, 2, 3];
+log(unshift(array), 3);
+log(array, [1, 2, 3]);
+
+array = [4, 5];
+log(unshift(array, [1, 2, 3]), 3);
+log(array, [[1, 2, 3], 4, 5]);
+
+var testArray = [1, 2, 3];
+log(shift(testArray), 1);
+log(testArray, [2, 3]);
+
+log(unshift(testArray, 5), 3);
+log(testArray, [5, 2, 3]);
+
+theEnd();
+
+    </script>
+  </body>
+</html>

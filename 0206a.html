@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+var phrase = prompt('Please write a phrase:');
+var count = phrase.replace(/ /g, '').length;
+
+console.log('There are ' + String(count) + ' characters in "'
+                         + phrase + '".');
+    </script>
+  </body>
+</html>

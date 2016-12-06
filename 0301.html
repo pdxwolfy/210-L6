@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+var myVar = 'This is global';
+
+function someFunction() {
+  var myVar = 'This is local';
+}
+
+someFunction();
+
+console.log(myVar); // This is global: the myVar variable in someFunction is
+                    // distinct from the myVar variable in the outer scope.
+                    // Thus, someFunction() does not modify the outer myVar.
+                    // Since console.log is called at the outer scope, it uses
+                    // the outer scope myVar, and prints 'This is global'.
+
+    </script>
+  </body>
+</html>

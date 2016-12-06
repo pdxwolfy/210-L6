@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+var myArray = [1, 2, 3, 4];
+var myOtherArray1 = myArray.slice();
+var myOtherArray2 = [];
+var index;
+
+for (index = 0; index < myArray.length; ++index) {
+  myOtherArray2[index] = myArray[index];
+}
+
+myArray.pop();
+console.log(myArray);
+console.log(myOtherArray1);
+console.log(myOtherArray2);
+    </script>
+  </body>
+</html>

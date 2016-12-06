@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+var myArray = [1, 2, 3, 4];
+var myOtherArray = myArray;
+
+myArray.pop();
+console.log(myOtherArray);
+
+myArray = [1, 2];
+console.log(myOtherArray);
+
+// The first console.log call logs [1, 2, 3] since myOtherArray and myArray
+// represent the same object. This means that myArray.pop() effects both
+// myArray and myOtherArray.
+//
+// The second console.log call logs [1, 2, 3] since `myArray = [1, 2]` changes
+// the object that is referenced by myArray without modifying the original
+// array and not changing the fact that myOtherArray points to that original
+// array.
+    </script>
+  </body>
+</html>

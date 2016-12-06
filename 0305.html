@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+
+function someFunction() {
+  myVar = 'This is global';
+}
+
+someFunction();
+console.log(myVar);
+
+// prints "This is global"
+//
+// Variables that are not declared are defined in the global scope. So,
+// console.log finds the undeclared myVar variable even though it was initialized
+// in someFunction().
+    </script>
+  </body>
+</html>

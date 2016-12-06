@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+//
+var a = [1, 2, 3];
+
+function myValue(b) {
+  b[2] += 7;
+}
+
+myValue(a);
+console.log(a);
+
+// prints [1, 2, 10]
+//
+// Inside the method myValue, b starts out as a reference to the argument that
+// was passed to the Function. Thus, b is a reference to the array in `a`. Since
+// `a` is an object (and an Array), it is mutable, so when `b[2] += 7` runs, it
+// increments `a[2]` by 7, which yields 10.
+    </script>
+  </body>
+</html>

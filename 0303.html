@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+    </pre>
+
+    <script>
+'use strict';
+
+var myVar = 'This is global';
+
+function someFunction() {
+  myVar = 'This is local';
+}
+
+someFunction();
+
+console.log(myVar);
+
+// prints "This is local"
+//
+// Variables in the outer scope can be accessed and modified inside Functions.
+    </script>
+  </body>
+</html>
